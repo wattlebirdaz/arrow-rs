@@ -372,7 +372,8 @@ pub fn sort_to_indices(
 }
 
 /// Options that define how sort kernels should behave
-#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+use serde::{Deserialize, Serialize};
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SortOptions {
     /// Whether to sort in descending order
     pub descending: bool,

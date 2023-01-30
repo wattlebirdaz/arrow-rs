@@ -70,6 +70,8 @@ multiversion = { version = "0.6.1", default-features = false }
 bitflags = { version = "1.2.1", default-features = false }
 zstd = { version = "0.11.1", default-features = false, optional = true }
 
+serde = { version = "1.0", features = ["derive"] }
+
 [package.metadata.docs.rs]
 features = ["prettyprint", "ipc_compression", "dyn_cmp_dict", "ffi", "pyarrow"]
 

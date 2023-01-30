@@ -210,7 +210,8 @@ pub struct RowConverter {
 }
 
 /// Configure the data type and sort order for a given column
-#[derive(Debug, Clone, PartialEq, Eq)]
+use serde::{Deserialize, Serialize};
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct SortField {
     /// Sort options
     options: SortOptions,
@@ -343,7 +344,7 @@ impl RowConverter {
 /// A row-oriented representation of arrow data, that is normalized for comparison
 ///
 /// See [`RowConverter`]
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Rows {
     /// Underlying row bytes
     buffer: Box<[u8]>,
